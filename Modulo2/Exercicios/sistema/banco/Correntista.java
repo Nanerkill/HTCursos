@@ -5,6 +5,16 @@ public class Correntista {
 	private String nome;
 	private String cpf;
 	
+	public Correntista(int codigo, String nome, String cpf) {
+		this.codigo = codigo;
+		this.nome = nome;
+		this.cpf = cpf;
+	}
+	
+	public Correntista() {
+		
+	}
+	
 	public int getCodigo() {
 		return codigo;
 	}
@@ -27,6 +37,11 @@ public class Correntista {
 	
 	public void setCpf(String cpf) {
 		this.cpf = cpf;
+	}
+	
+	@Override
+	public String toString() {
+		return "[" + codigo + ", " + nome + ", " + cpf + "]";
 	}
 
 }
