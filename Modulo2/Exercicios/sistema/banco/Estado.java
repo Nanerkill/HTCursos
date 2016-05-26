@@ -8,7 +8,7 @@ public class Estado {
 		
 	}
 	
-	public Estado(String nome, String uf) { //para lista 10
+	public Estado(String nome, String uf) { 
 		this.nome = nome;
 		this.uf = uf;
 	}
@@ -28,5 +28,9 @@ public class Estado {
 	public void setUf(String uf) {
 		this.uf = uf;
 	}
-
+	
+	public String toString() {
+		return nome + "\n" + uf;
+	}
+	
 }

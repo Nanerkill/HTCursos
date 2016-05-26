@@ -5,6 +5,7 @@ public class Agencia {
 	private String nome;
 	private Logadouro logadouro;
 	private int numero;
+	private Banco banco;
 	
 	public int getCodigo() {
 		return codigo;
@@ -36,6 +37,10 @@ public class Agencia {
 	public void setBanco(Banco banco) {
 		this.banco = banco;
 	}
-	private Banco banco;
+	
+	public String toString() {
+		return codigo + "\n" + nome + "\n" + logadouro.toString() + "\n" + numero + "\n" + banco.toString();
+	}
+	
 
 }

@@ -5,12 +5,13 @@ import java.util.Date;
 
 public class Main {
 
+	
 	@SuppressWarnings("deprecation")
 	public static void main(String[] args) {
 		
 		Date dateLoc1 = new Date();
 		Date dateEnt1 = new Date();
-		dateEnt1.setDate(dateEnt1.getDate()+5);;
+		dateEnt1.setDate(dateLoc1.getDate()+5);;
 		
 		
 		//Primeira locacao
@@ -40,6 +41,7 @@ public class Main {
 		System.out.println(loc1.toString());
 		System.out.println(loc2.toString());
 		System.out.println(loc3.toString());
+		
 		
 		
 		

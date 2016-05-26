@@ -38,4 +38,8 @@ public class Logadouro {
 		this.cidade = cidade;
 	}
 	
+	public String toString() {
+		return rua + "\n" + cep + "\n" + bairro + "\n" + cidade.toString();
+	}
+	
 }
