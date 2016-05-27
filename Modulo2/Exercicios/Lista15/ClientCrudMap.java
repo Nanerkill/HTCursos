@@ -18,21 +18,18 @@ public class ClientCrudMap implements Crud<Client> {
 	public void excluir(Client obj) {
 		Set<Integer> keys = map.keySet();
 		for(Integer x : keys)
-			if(map.get(x).equals(obj)) {
+			if(map.get(x).getId() == obj.getId()) {
 				map.remove(x);
-				break; //don't know why...
+				break; //don't know why... // because once you remove something the iterator breaks
 			}
 	}
 
 	@Override
 	public void alterar(Client obj) {
-		if(map.containsValue(obj)) {
-			Set<Integer> keys = map.keySet();
-			for(Integer x : keys) {
-				if(map.get(x).equals(obj))
-					map.put(x, obj);
-			}
-		}
+		Set<Integer> keys = map.keySet();
+		for(Integer x : keys)
+			if(map.get(x).getId() == obj.getId())
+				map.put(x, obj);
 	}
 
 	@Override

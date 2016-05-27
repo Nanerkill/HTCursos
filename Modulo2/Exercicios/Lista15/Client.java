@@ -26,16 +26,26 @@ public class Client {
 	public int hashCode() {
 		final int prime = 31;
 		int result = 1;
+		result = prime * result + id;
 		result = prime * result + ((nome == null) ? 0 : nome.hashCode());
 		return result;
 	}
 
 	@Override
 	public boolean equals(Object obj) {
-		if(!(obj instanceof Client))
+		if (this == obj)
+			return true;
+		if (obj == null)
 			return false;
-		Client newObj = (Client) obj;
-		if(this.id != newObj.id)
+		if (getClass() != obj.getClass())
+			return false;
+		Client other = (Client) obj;
+		if (id != other.id)
+			return false;
+		if (nome == null) {
+			if (other.nome != null)
+				return false;
+		} else if (!nome.equals(other.nome))
 			return false;
 		return true;
 	}

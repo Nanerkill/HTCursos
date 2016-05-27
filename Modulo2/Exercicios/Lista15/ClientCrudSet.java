@@ -13,34 +13,27 @@ public class ClientCrudSet implements Crud<Client> {
 	}
 
 	@Override
-	public void excluir(Client obj) { //why not use contains and remove / clients.remove use hashcode why???
-		//if(clientes.contains(obj))
-			//clientes.remove(obj);
-		for(Iterator<Client> it = clientes.iterator(); it.hasNext();)
-			if(it.next().equals(obj))
+	public void excluir(Client obj) { 
+		for(Iterator<Client> it = clientes.iterator(); it.hasNext();) {
+			if(it.next().getId() == obj.getId())
 				it.remove();
+		}
 	}
 
 	@Override
-	public void alterar(Client obj) { //can I do it like this?
-		//if contains obj //contains use hashCode
+	public void alterar(Client obj) {
 		for(Iterator<Client> it = clientes.iterator(); it.hasNext();) {
-			if(it.next().equals(obj)) {
+			if(it.next().getId() == obj.getId()) {
 				it.remove();
 				clientes.add(obj);
-				break; //don't know why
+				break; //don't know why // because i broke the iterator
 			}
 		}
 	}
 
 	@Override
 	public Client[] buscarTodos() {
-		Object vet[] = clientes.toArray();
-		Client cli[] = new Client[vet.length];
-		for(int i = 0; i < vet.length; i++)
-			if(vet[i] instanceof Client)
-				cli[i] = (Client) vet[i];
-		return cli;
+		return clientes.toArray(new Client[clientes.size()]);
 	}
 
 }
