@@ -6,8 +6,8 @@ public class Aluno extends PessoaFisica{
 		super(codigo, nome, cidade, cpf, rg);
 	}
 	
-	/*public Aluno(String nome, String cpf) { //nao sei se existe
+	public Aluno(String nome, String cpf) { //nao sei se existe
 		super(nome, cpf);
-	}*/
+	}
 
 }

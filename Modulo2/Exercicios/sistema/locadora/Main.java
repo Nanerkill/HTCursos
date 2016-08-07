@@ -11,7 +11,7 @@ public class Main {
 		
 		Date dateLoc1 = new Date();
 		Date dateEnt1 = new Date();
-		dateEnt1.setDate(dateLoc1.getDate()+5);;
+		dateEnt1.setDate(dateLoc1.getDate()+5);
 		
 		
 		//Primeira locacao
